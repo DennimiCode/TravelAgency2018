@@ -85,7 +85,9 @@
                 Margin="10"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Click="LoginButtonOnClick"/>
+                Click="LoginButtonOnClick"
+                
+                IsDefault="True"/>
         </StackPanel>
     </Grid>
 </Page>

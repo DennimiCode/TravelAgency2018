@@ -6,7 +6,7 @@ namespace TravelAgency2018.Pages
 {
     public partial class AuthorizationPage : Page
     {
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
 
         private readonly char[] _captchaDictionary = new char[52]
         {
@@ -56,28 +56,49 @@ namespace TravelAgency2018.Pages
 
         private void ReloadCaptchaButtonOnClick(object sender, RoutedEventArgs e) => GetCaptcha();
 
-        private void LoginButtonOnClick(object sender, RoutedEventArgs e)
+        private void LoginButtonOnClick(object sender, RoutedEventArgs e) => AuthorizationVerification();
+
+        private void AuthorizationVerification()
         {
             if (CaptchaInputTextBox.Text == CaptchaTextBlock.Text)
             {
-                string UserLoginDB = "";
-                string UserPasswordDB = "";
-                
-                if (UserInputLoginTextBox.Text == "" && UserInputPasswordBox.Password == "")
+                string userLoginDb = "";
+                string userPasswordDb = "";
+
+                if (CheckEmptyEntries())
                 {
-                    
+                    if (UserInputLoginTextBox.Text == userLoginDb && UserInputPasswordBox.Password == userPasswordDb)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не верный логин или пароль!", "Ошибка",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        GetCaptcha();
+                    }
                 }
                 else
-                { 
-                    MessageBox.Show("Не верный логин или пароль!", "Ошибка", 
+                {
+                    MessageBox.Show("Все поля должны быть заполнены!", "Ошибка",
                         MessageBoxButton.OK, MessageBoxImage.Error);
+                    GetCaptcha();
                 }
             }
             else
             {
-                MessageBox.Show("Проверка на робота не пройдена!", "Ошибка", 
+                MessageBox.Show("Проверка на робота не пройдена!", "Ошибка",
                     MessageBoxButton.OK, MessageBoxImage.Error);
+                GetCaptcha();
             }
+        }
+
+        private bool CheckEmptyEntries()
+        {
+            if (UserInputLoginTextBox.Text != string.Empty || UserInputPasswordBox.Password != string.Empty)
+                return true;
+            else
+                return false;
         }
     }
 }
