@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelAgencyModelStoreContainer" CdmEntityContainer="TravelAgencyEntities">
+    <EntitySetMapping Name="Application">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tour" ColumnName="Tour" />
+          <ScalarProperty Name="FoodServiceType" ColumnName="FoodServiceType" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Facilities" ColumnName="Facilities" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facility">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Facility">
+        <MappingFragment StoreEntitySet="Facility">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodServiceType">
+      <EntityTypeMapping TypeName="TravelAgencyModel.FoodServiceType">
+        <MappingFragment StoreEntitySet="FoodServiceType">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountOfStars" ColumnName="CountOfStars" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelComment">
+      <EntityTypeMapping TypeName="TravelAgencyModel.HotelComment">
+        <MappingFragment StoreEntitySet="HotelComment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tour">
+      <EntityTypeMapping TypeName="TravelAgencyModel.Tour">
+        <MappingFragment StoreEntitySet="Tour">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Hotels" ColumnName="Hotels" />
+          <ScalarProperty Name="TicketsCount" ColumnName="TicketsCount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsActual" ColumnName="IsActual" />
+          <ScalarProperty Name="TourTypes" ColumnName="TourTypes" />
+          <ScalarProperty Name="ImagePreview" ColumnName="ImagePreview" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourHistory">
+      <EntityTypeMapping TypeName="TravelAgencyModel.TourHistory">
+        <MappingFragment StoreEntitySet="TourHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Hotels" ColumnName="Hotels" />
+          <ScalarProperty Name="TicketsCount" ColumnName="TicketsCount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsActual" ColumnName="IsActual" />
+          <ScalarProperty Name="TourTypes" ColumnName="TourTypes" />
+          <ScalarProperty Name="ImagePreview" ColumnName="ImagePreview" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourType">
+      <EntityTypeMapping TypeName="TravelAgencyModel.TourType">
+        <MappingFragment StoreEntitySet="TourType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TravelAgencyModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

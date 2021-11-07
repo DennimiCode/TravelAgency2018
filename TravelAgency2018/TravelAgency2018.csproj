@@ -14,9 +14,24 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,9 +49,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Assets\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +87,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Utils\PreloadTourControls.cs" />
+    <Compile Include="View\Controls\TourControl.xaml.cs">
+      <DependentUpon>TourControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AddTourWindow.xaml.cs">
+      <DependentUpon>AddTourWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Controls\TourControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\LoadingScreenWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,15 +110,91 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="DataModel\Application.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Country.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Facility.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\FoodServiceType.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Hotel.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\HotelComment.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Role.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Tour.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TourHistory.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TourType.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TravelAgency.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelAgency.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TravelAgency.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TravelAgency.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelAgency.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\User.cs">
+      <DependentUpon>TravelAgency.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\LoadingScreenWindow.xaml.cs">
+      <DependentUpon>LoadingScreenWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AuthorizationPage.xaml" />
+    <Page Include="View\Pages\AdministratorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AuthorizationPage.xaml" />
+    <Page Include="View\Pages\ClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\ManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AddTourWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AuthorizationPage.xaml.cs">
+    <Compile Include="View\Pages\AdministratorPage.xaml.cs">
+      <DependentUpon>AdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\ClientPage.xaml.cs">
+      <DependentUpon>ClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\ManagerPage.xaml.cs">
+      <DependentUpon>ManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -89,7 +212,16 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EntityDeploy Include="DataModel\TravelAgency.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TravelAgency.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\TravelAgency.edmx.diagram">
+      <DependentUpon>TravelAgency.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,15 +231,42 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Logo.png">
+    <Content Include="DataModel\TravelAgency.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TravelAgency.Context.cs</LastGenOutput>
+      <DependentUpon>TravelAgency.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataModel\TravelAgency.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TravelAgency.edmx</DependentUpon>
+      <LastGenOutput>TravelAgency.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Assets\AppIcon.ico" />
+    <Content Include="Resources\Assets\Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\reload.png">
+    <Content Include="Resources\ToursImages\NoImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Assets\reload.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

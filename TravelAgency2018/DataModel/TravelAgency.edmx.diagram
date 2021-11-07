@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="abe413bee487422c85aa3a5044f8c7df" Name="Diagram1">
+        <EntityTypeShape EntityType="TravelAgencyModel.Application" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.Country" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.Facility" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.FoodServiceType" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.Hotel" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.HotelComment" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.Role" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.Tour" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.TourHistory" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.TourType" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelAgencyModel.User" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="TravelAgencyModel.FK__Applicati__Clien__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__Applicati__FoodS__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__Applicatio__Tour__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__HotelComm__Appli__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__Hotel__Country__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__Tour__Country__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__HotelComm__Hotel__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__HotelComm__Autho__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelAgencyModel.FK__User__UserRole__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
